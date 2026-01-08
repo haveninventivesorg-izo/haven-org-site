@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haven Inventives</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+header {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(2,6,23,0.8), rgba(30,41,59,0.8)), url("images/banner.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1rem;
+  color: #cbd5f5;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 15px #2563eb;
+  transform: scale(1.05);
+}
+
+/* HERO LINK */
+.hero-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 18px 30px;
+  background: #00c4cc;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 0 15px #00c4ccaa;
+}
+
+.hero-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00c4cc;
+}
+
+section {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  color: #93c5fd;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #020617;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 0 15px #93c5fd;
+  transform: scale(1.03);
+}
+
+.donate-box {
+  background: #020617;
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.whatsapp {
+  display: inline-flex;
+  align-items: center;
+  background: #25D366;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.whatsapp img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.whatsapp:hover {
+  box-shadow: 0 0 10px #25D366;
+  transform: scale(1.05);
+}
+
+.airtel a, .mtn a {
+  display: block;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px 0;
+  animation: heartbeat 1.5s infinite;
+  transition: 0.3s;
+}
+
+.airtel a {
+  background: #f00;
+  color: #fff;
+}
+
+.airtel a:hover {
+  box-shadow: 0 0 15px #f00;
+  transform: scale(1.1);
+}
+
+.mtn a {
+  background: #FFEB3B;
+  color: #000;
+}
+
+.mtn a:hover {
+  box-shadow: 0 0 15px #FFEB3B;
+  transform: scale(1.1);
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+}
+
+.bank-details {
+  background: maroon;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.bank-details:hover {
+  box-shadow: 0 0 15px maroon;
+  transform: scale(1.05);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #020617;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  header h1 { font-size: 1.8rem; }
+  header p { font-size: 0.95rem; }
+}
+
+@media (max-width: 480px) {
+  header { padding: 60px 10px; }
+  .card { padding: 15px; }
+  .btn { padding: 10px 20px; }
+  .donate-box { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Haven Inventives</h1>
+  <img src="images/logo.png" alt="Haven Inventives Logo" style="max-width:180px; margin:20px auto; display:block;">
+  <p> Haven Inventives is a <strong>registered entity</strong> and a creative and innovation hub based in Eastern Uganda, empowering individuals, businesses, NGOs, and communities through digital skills, media, and technology. </p>
+  <a href="#donate" class="btn">Donate or Partner</a>
+  <!-- HERO LINK -->
+  <a href="https://haveninventives.store" class="hero-link" target="_blank">
+    Visit our app created by Haven Team
+  </a>
+</header>
+
+<section class="fade-section">
+  <h2>Who We Are</h2>
+  <p> Haven Inventives is a creative-driven initiative focused on innovation, digital empowerment, and community impact. We collaborate with creatives, youth, organizations, NGOs, and government bodies to deliver practical skills, professional media services, and sustainable solutions. </p>
+</section>
+
+<section class="fade-section">
+  <h2>What We Do</h2>
+  <div class="services">
+    <div class="card fade-card">
+      <img src="images/service1.png" alt="Studio Space">
+      <h3>Studio Space to Let</h3>
+      <p>Professional studio space for recording audio, podcasts, and other media projects.</p>
+    </div>
+    <div class="card fade-card">
+      <img src="images/service2.png" alt="Online Business 1">
+      <h3>Online Business Training</h3>
+      <p>Learn to run e-commerce businesses using WhatsApp catalogs and other digital tools.</p>
+    </div>
+    <div class="card fade-card">
+      <img src="images/service3.png" alt="Online Business 2">
+      <h3>Online Business Guidance</h3>
+      <p>Step-by-step coaching on remote work, online sales, and business strategy.</p>
+    </div>
+    <div class="card fade-card">
+      <img src="images/service4.png" alt="Documentary & Content">
+      <h3>Documentary & Content Creation</h3>
+      <p>Storytelling, audio-visual content production, and creative media projects.</p>
+    </div>
+  </div>
+</section>
+
+<section class="fade-section">
+  <h2>Our Vision</h2>
+  <p> To become a leading creative and innovation hub that equips communities with practical skills, amplifies untold stories, and builds sustainable digital opportunities. </p>
+</section>
+
+<section class="fade-section">
+  <h2>Our Mission</h2>
+  <p> To empower individuals and organizations through creativity, technology, training, and collaboration while contributing positively to society through impact-driven initiatives. </p>
+</section>
+
+<section class="fade-section">
+  <h2>Invite Partners</h2>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/gUKSoUEiPp0" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section id="donate" class="fade-section">
+  <h2>Support Us</h2>
+  <div class="donate-box">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/256782751859" class="whatsapp">
+      <img src="images/whatsapp-icon.png" alt="WhatsApp"> Chat via WhatsApp
+    </a>
+    <!-- Airtel Money -->
+    <div class="airtel">
+      <a href="tel:*185*9*4392292#">Airtel Money: *185*9# (4392292)</a>
+    </div>
+    <!-- MTN MoMo -->
+    <div class="mtn">
+      <a href="tel:*165*3*287069#">MTN MoMo: *165*3# (287069)</a>
+    </div>
+    <!-- Bank Details -->
+    <div class="bank-details">
+      <strong>Equity Bank – Mbale Branch</strong><br>
+      Account Name: Haven Inventives<br>
+      Account Number: 1014203500274<br>
+      SWIFT Code: EQBLUGKA
+    </div>
+    <!-- Proposal PDF -->
+    <p style="margin-top:15px;">
+      <a href="proposal/proposal.pdf" download style="color:#60a5fa; font-weight:bold;">Download Our Proposal (PDF)</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Haven Inventives • Mbale, Uganda <br>
+  📧 <a href="mailto:haveninventives@gmail.com">haveninventives@gmail.com</a> | 📞 <a href="https://wa.me/256782751859">+256 782 751 859</a>
+</footer>
+
+<script>
+// Scroll fade-in
+const sections = document.querySelectorAll('.fade-section');
+const cards = document.querySelectorAll('.fade-card');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, {threshold: 0.2});
+
+sections.forEach(section => observer.observe(section));
+cards.forEach(card => observer.observe(card));
+</script>
+</body>
+</html>
